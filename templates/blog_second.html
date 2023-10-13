@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+ 
+{% block content %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-6">
+            <h1>Blog</h1>
+
+            {% for post_second in posts %}
+                <div class="card mb-4">
+                    <img class="card-img-top" src= {{ post_second.img_title }}>
+                    <div class="card-body">
+                        <div class="small text-muted">{{ post_second.date_posted.strftime('%Y-%m-%d') }}</div>
+                        <h2 class="card-title h4">{{ post_second.title }}</h2>
+                        <p class="card-text">{{ post_second.content}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <a class="btn btn-primary" href="{{ url_for('post_second') }}">More Pictures →</a>
+            <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('blog') }}">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+
+        </div>
+
+        <div class="col-3">
+            <div class="container my-4">
+                <h3>Just for Fun!</h3>
+                <label for="inputA">a</label>
+                <input id="inputA" value=1 onkeyup="doSomething()">
+                <label for="inputB">b</label>
+                <input id="inputB" value=2 onkeyup="doSomething()">
+
+                <p><span id="valueA">1</span> + <span id="valueB">2</span> = <span id="valueC">3</span>입니다.</p>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="container my-4">
+                <div class="card">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <ul class="list-unstyled mb-0">
+                                {% for post_second in posts%}
+                                    <li><a href="{{ url_for('post_second') }}">{{ post_second.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
