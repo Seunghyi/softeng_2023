@@ -4,8 +4,9 @@
     <head>
         <title>SngH</title>
         <link href="bootstrap4_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <script src="https://kit.fontawesome.com/f13d78cf88.js" crossorigin="anonymous"></script>
 
-        <script type="text/javascript" src="two_numbers.js"></script>
+        <script type="text/javascript" src="reverse_string.js"></script>
         <script type="text/javascript" src="../softeng_2023/week04/what_time_is_it.js"></script>
 
     </head>
@@ -18,13 +19,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i>&nbsp Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="blog.html"><i class="fa-brands fa-blogger"></i>&nbsp Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Traveling_alone.html">Post</a>
+                        <a class="nav-link" href="Traveling_alone.html"><i class="fa-regular fa-pen-to-square"></i>&nbsp Post</a>
                     </li>
                 </ul>
             </div>
@@ -40,13 +41,13 @@
         <section class="py-5">
             <div class="container my-5">
                 <div class="col-lg-6">
-                    <h3>Just for Fun!</h3>
-                    <label for="inputA">a</label>
-                    <input id="inputA" value=1 onkeyup="doSomething()">
-                    <label for="inputB">b</label>
-                    <input id="inputB" value=2 onkeyup="doSomething()">
+                    <div id="result"></div>
+                    <label for="inputA">Your Name: </label>
+                    <input id="inputA" value="Sissy">
+                    <button type="submit" onclick="showGreeting()">click</button>
 
-                    <p><span id="valueA">1</span> + <span id="valueB">2</span> = <span id="valueC">3</span>입니다.</p>
+                    <p>Welcome, <span id="valueA">Sissy</span>!</p>
+
                 </div>
             </div>
         </section>
